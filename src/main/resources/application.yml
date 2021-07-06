@@ -172,9 +172,9 @@ initializr:
             version: 2.1.1
           - compatibilityRange: "2.5.0-M1"
             version: 2.2.0
-      Hcl-framework:
-        groupId: com.hcl.framework
-        artifactId: hcl-framework-dependencies
+      ttech-framework:
+        groupId: com.ttech.framework
+        artifactId: ttech-framework-dependencies
         version: 0.0.1
     gradle:
       dependency-management-plugin-version: 1.0.11.RELEASE
@@ -1572,12 +1572,12 @@ initializr:
             - rel: guide
               href: https://github.com/alibaba/spring-cloud-alibaba/tree/master/spring-cloud-alibaba-examples/sentinel-example/sentinel-core-example
               description: Sentinel Example
-    - name: Hcl Framework
-      #bom: Hcl-framework
+    - name: Ttech Framework
+      #bom: Ttech-framework
       content:
         - name: jwt
-          id: hcl-jwt
-          groupId: com.hcl
+          id: ttech-jwt
+          groupId: com.ttech
           artifactId: test
           description: test
           starter: false
