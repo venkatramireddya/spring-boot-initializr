@@ -15,15 +15,16 @@ public class DockerContributor implements ProjectContributor {
 
 	private String gistUrl;
 	private String authHeaderValue;
+	
+	public  DockerContributor(GistProperties gitProperties) {
+		gistUrl = gitProperties.getGitBaseUrl();
+	}
+	
 	@Override
 	public void contribute(Path projectRoot) throws IOException {
-		Files.createDirectories(projectRoot.resolve("/src/main/docker"));
-		//HttpURLConnection conn = createHttpURLConnection();
-		//Files.copy(conn.getInputStream(), projectRoot.resolve("/src/main/docker/Dockerfile"));
-		Path file = Files.createFile(projectRoot.resolve("hello.txt"));
-		try (PrintWriter writer = new PrintWriter(Files.newBufferedWriter(file))) {
-			writer.println("Test");
-		}
+		Files.createDirectories(projectRoot.resolve("src/main/docker"));
+		HttpURLConnection conn = createHttpURLConnection();
+		Files.copy(conn.getInputStream(), projectRoot.resolve("src/main/docker/Dockerfile"));
 	}
 	private HttpURLConnection createHttpURLConnection() throws IOException{
 		HttpURLConnection conn = (HttpURLConnection) new URL(gistUrl).openConnection();

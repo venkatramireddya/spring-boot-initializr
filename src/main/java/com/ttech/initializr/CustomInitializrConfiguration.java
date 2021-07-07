@@ -14,13 +14,18 @@ public class CustomInitializrConfiguration {
 	}
 	
 	@Bean
-	public DockerContributor dockerContributor() {
-		return new DockerContributor();
+	public DockerContributor dockerContributor( GistProperties gitProperties) {
+		return new DockerContributor(gitProperties);
 	}
 	
 	@Bean
 	public GradleBuildCustomizer gradleBuildCustomizer() {
 		return new GradleBuildCustomizer();
+	}
+	
+	@Bean
+	public JenkinsContributor jenkinsContributor() {
+		return new JenkinsContributor();
 	}
 	
 }
