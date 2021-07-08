@@ -1578,8 +1578,9 @@ initializr:
         - name: jwt
           id: ttech-jwt
           groupId: com.ttech
-          artifactId: test
-          description: test
+          artifactId: ttech-jwt-spring-boot-starter
+          version: 0.0.1-SNAPSHOT
+          description: Customized Jwt
           starter: false
         - name: Common Exception
           id: ttech-common
